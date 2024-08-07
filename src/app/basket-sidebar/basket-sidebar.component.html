@@ -1,0 +1,44 @@
+<button pButton icon="pi pi-shopping-cart" (click)="sideBarVisible=true"></button>
+
+<p-sidebar [(visible)]="sideBarVisible" position="right" [style]="{width:'400px'}">
+    <div *ngFor="let item of basket; trackBy:trackById">
+        <div class="mt-4 basket-item">
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="{{item.Image}}" style="width: 100%;height: 100%;" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <div>{{item.Name}}</div>
+
+                    <div class="d-flex align-items-center">
+                        <button pButton icon="pi pi-minus" (click)="minusPlus(item.Id,true)"></button>
+
+                        <div>
+                            {{item.Count}}
+                        </div>
+                        <button pButton icon="pi pi-plus" (click)="minusPlus(item.Id,false)"></button>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div>{{item.Price*item.Count | currency:'TRY':true}}</div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</p-sidebar>
+
+
+<p-dialog [(visible)]="isDelete">
+
+    <div>Are you sure ?</div>
+    <div class="d-flex gap-4 justify-content-center mt-4">
+        <button (click)="deleteBasketItem()">Yes</button>
+        <button (click)="isDelete=false">NO</button>
+    </div>
+</p-dialog>

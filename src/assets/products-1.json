@@ -78,7 +78,7 @@
     "Price": 499
   },
   {
-    "Id": 1,
+    "Id": 7,
     "Category1": "Electronics",
     "Category2": "Mobile",
     "Category3": "Smartphone",
@@ -91,7 +91,7 @@
     "Price": 999
   },
   {
-    "Id": 2,
+    "Id": 8,
     "Category1": "Electronics",
     "Category2": "Mobile",
     "Category3": "Feature Phone",
@@ -104,7 +104,7 @@
     "Price": 49
   },
   {
-    "Id": 3,
+    "Id": 9,
     "Category1": "Electronics",
     "Category2": "Laptop",
     "Category3": "Gaming Laptop",
@@ -117,7 +117,7 @@
     "Price": 1499
   },
   {
-    "Id": 4,
+    "Id": 10,
     "Category1": "Electronics",
     "Category2": "Laptop",
     "Category3": "Ultrabook",
@@ -130,7 +130,7 @@
     "Price": 1299
   },
   {
-    "Id": 5,
+    "Id": 11,
     "Category1": "Electronics",
     "Category2": "Tablet",
     "Category3": "Android Tablet",
@@ -143,7 +143,7 @@
     "Price": 399
   },
   {
-    "Id": 6,
+    "Id": 12,
     "Category1": "Electronics",
     "Category2": "Tablet",
     "Category3": "Windows Tablet",

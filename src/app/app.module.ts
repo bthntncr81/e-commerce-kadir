@@ -1,16 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MyFirstComponent } from './my-first/my-first.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
-import { ProductComponent } from './product/product.component';
-import { HttpClientModule } from '@angular/common/http';
-import { KadirProductService } from './kadir-product.service';
-import { KadirProductComponent } from './kadir-product/kadir-product.component';
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ButtonModule } from "primeng/button";
+import { SidebarModule } from "primeng/sidebar";
+import { ToastModule } from "primeng/toast";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BasketSidebarComponent } from "./basket-sidebar/basket-sidebar.component";
+import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from "./header/header.component";
+import { KadirProductService } from "./kadir-product.service";
+import { KadirProductComponent } from "./kadir-product/kadir-product.component";
+import { MainComponent } from "./main/main.component";
+import { MyFirstComponent } from "./my-first/my-first.component";
+import { ProductComponent } from "./product/product.component";
+import { MessageService } from "primeng/api";
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -20,15 +27,21 @@ import { KadirProductComponent } from './kadir-product/kadir-product.component';
     FooterComponent,
     MainComponent,
     ProductComponent,
-    KadirProductComponent
+    KadirProductComponent,
+    BasketSidebarComponent,
   ],
   imports: [
+    ToastModule,
     BrowserModule,
+    SidebarModule,
+    ButtonModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    DialogModule
   ],
-  providers: [KadirProductService],
+  providers: [KadirProductService,MessageService],
   bootstrap: [AppComponent],
-  exports:[HeaderComponent,FooterComponent]
+  exports: [HeaderComponent, FooterComponent],
 })
-export class AppModule { }
+export class AppModule {}
