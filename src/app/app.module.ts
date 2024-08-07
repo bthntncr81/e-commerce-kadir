@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { KadirProductService } from './kadir-product.service';
+import { KadirProductComponent } from './kadir-product/kadir-product.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { KadirProductService } from './kadir-product.service';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    ProductComponent
+    ProductComponent,
+    KadirProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,16 @@
 <main>
-  <!-- <div class="container" style="display: flex;flex-wrap: wrap; gap:20px;padding: 20px;">
-    <app-product *ngFor="let item of items" [item]="item"></app-product>
-  </div> -->
+  <div class="container" style="display: flex;flex-wrap: wrap; gap:20px;padding: 20px;">
+    <div class="row gx-4 gy-4">
+      <div *ngFor="let item of items" class="col-lg-3">
+        <app-kadir-product [product]="item"></app-kadir-product>
+
+
+      </div>
+    </div>
+  </div>
 
 
 
-  
+  <!-- <app-product *ngFor="let item of items" [item]="item"></app-product> -->
+
 </main>

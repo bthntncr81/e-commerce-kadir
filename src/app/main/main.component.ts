@@ -1,20 +1,19 @@
-import { Component } from '@angular/core';
-import { KadirProductService } from '../kadir-product.service';
+import { Component } from "@angular/core";
+import { KadirProductService } from "../kadir-product.service";
+import { ProductModel } from "../product.model";
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
+  selector: "app-main",
+  templateUrl: "./main.component.html",
+  styleUrl: "./main.component.scss",
 })
 export class MainComponent {
-  items: number;
+  items: ProductModel[] = [];
   constructor(private service: KadirProductService) {}
 
   ngOnInit(): void {
     this.service.getProducts().subscribe((res) => {
-      console.log(res);
+      this.items = res;
     });
-
-
   }
 }

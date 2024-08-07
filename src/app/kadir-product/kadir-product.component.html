@@ -1,0 +1,15 @@
+<div class="kadir-card card">
+    <div class="upperlayer">
+        <img src="{{product.Image}}" alt="">
+    </div>
+    <div class="footerlayer">
+        <div class="d-flex align-items-center justify-content-around h-100">
+            <div class="product-name">
+                {{product.Name}}
+            </div>
+            <div class="price">
+                {{product.Price | currency:'USD'}}
+            </div>
+        </div>
+    </div>
+</div>

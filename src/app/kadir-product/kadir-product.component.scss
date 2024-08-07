@@ -1,0 +1,28 @@
+.upperlayer {
+  text-align: center;
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+    max-width: 200px;
+    transform: translateX(-150px);
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.footerlayer {
+  height: 0;
+  opacity: 0;
+
+  transition: height 0.5s ease-in-out, opacity 1s ease-in-out;
+}
+
+.kadir-card:hover {
+  .footerlayer {
+    height: 100px;
+    opacity: 1;
+  }
+  img {
+    transform: translateX(0);
+  }
+}
