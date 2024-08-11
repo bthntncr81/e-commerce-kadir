@@ -18,6 +18,8 @@ import { MyFirstComponent } from "./my-first/my-first.component";
 import { ProductComponent } from "./product/product.component";
 import { MessageService } from "primeng/api";
 import {DialogModule} from 'primeng/dialog';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,11 @@ import {DialogModule} from 'primeng/dialog';
     ProductComponent,
     KadirProductComponent,
     BasketSidebarComponent,
+    ProductDetailComponent,
   ],
   imports: [
     ToastModule,
+    CarouselModule,
     BrowserModule,
     SidebarModule,
     ButtonModule,

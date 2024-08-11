@@ -1,0 +1,28 @@
+.my-detail-carousel {
+  img {
+    height: 300px;
+    object-fit: contain;
+  }
+  ::ng-deep .owl-next {
+    position: absolute;
+    right: 0;
+    top: 125px;
+
+    i {
+      display: flex;
+      height: 25px;
+      align-items: center;
+    }
+  }
+
+  ::ng-deep .owl-prev {
+    position: absolute;
+    left: 0;
+    top: 125px;
+    i {
+      display: flex;
+      height: 25px;
+      align-items: center;
+    }
+  }
+}

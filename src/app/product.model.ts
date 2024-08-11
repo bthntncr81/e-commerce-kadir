@@ -7,7 +7,7 @@ export class ProductModel {
   EmployeeId: number;
   Name: string;
   Description: string;
-  Image: string;
+  Images: string[];
   Stock: number;
   Price: number;
 }
@@ -17,5 +17,5 @@ export class BasketModel {
   Count: number;
   Name: string;
   Id: number;
-  Image:string
+  Image: string;
 }
