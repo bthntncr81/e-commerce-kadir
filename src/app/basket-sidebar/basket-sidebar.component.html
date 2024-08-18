@@ -1,35 +1,43 @@
 <button pButton icon="pi pi-shopping-cart" (click)="sideBarVisible=true"></button>
 
-<p-sidebar [(visible)]="sideBarVisible" position="right" [style]="{width:'400px'}">
-    <div *ngFor="let item of basket; trackBy:trackById">
-        <div class="mt-4 basket-item">
+<p-sidebar [(visible)]="sideBarVisible" position="right" [style]="{width:'400px'}" class="my-sidebar">
+    <div class="top-basket">
 
 
-            <div class="row">
-                <div class="col-lg-4">
-                    <img src="{{item.Image}}" style="width: 100%;height: 100%;" alt="">
-                </div>
-                <div class="col-lg-4">
-                    <div>{{item.Name}}</div>
+        <div *ngFor="let item of basket; trackBy:trackById">
+            <div class="mt-4 basket-item">
 
-                    <div class="d-flex align-items-center">
-                        <button pButton icon="pi pi-minus" (click)="minusPlus(item.Id,true)"></button>
 
-                        <div>
-                            {{item.Count}}
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="{{item.Image}}" style="width: 100%;height: 100%;" alt="">
+                    </div>
+                    <div class="col-lg-4">
+                        <div>{{item.Name}}</div>
+
+                        <div class="d-flex align-items-center">
+                            <button pButton icon="pi pi-minus" (click)="minusPlus(item.Id,true)"></button>
+
+                            <div>
+                                {{item.Count}}
+                            </div>
+                            <button pButton icon="pi pi-plus" (click)="minusPlus(item.Id,false)"></button>
+
                         </div>
-                        <button pButton icon="pi pi-plus" (click)="minusPlus(item.Id,false)"></button>
+                    </div>
+                    <div class="col-lg-4">
+                        <div>{{item.Price*item.Count | currency:'TRY':true}}</div>
 
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div>{{item.Price*item.Count | currency:'TRY':true}}</div>
 
                 </div>
-
             </div>
-        </div>
 
+        </div>
+    </div>
+    <div class="bottom-basket">
+        <strong>TOPLAM :</strong>
+        <strong>{{basketService.totalPrice$ |async | currency:'TRY' }}</strong>
     </div>
 </p-sidebar>
 

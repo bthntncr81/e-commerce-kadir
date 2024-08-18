@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { BasketService } from "../basket.service";
 import { KadirProductService } from "../kadir-product.service";
 import { BasketModel } from "../product.model";
 
@@ -12,7 +13,10 @@ export class BasketSidebarComponent implements OnInit {
   sideBarVisible: boolean = false;
   isDelete: boolean = false;
   deleteIndex = 0;
-  constructor(private prodService: KadirProductService) {}
+  constructor(
+    private prodService: KadirProductService,
+    public basketService: BasketService
+  ) {}
   ngOnInit(): void {
     this.prodService.basketNew$.subscribe({
       next: (res) => {

@@ -1,21 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { BasketService } from "./basket.service";
+import { KadirProductService } from "./kadir-product.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.scss",
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {}
-  title = 'e-commerce-project';
+  constructor(
+    private basketService: BasketService,
+    private prodService: KadirProductService
+  ) {}
+  ngOnInit(): void {
+    this.basketService.calculateTotal();
+    this.prodService.setCartList();
+  }
+  title = "e-commerce-project";
   user: User = {
-    surname: 'Baş',
+    surname: "Baş",
     age: 18,
-    name: 'Kadir',
+    name: "Kadir",
   };
 
   changeName() {
-    this.user.name = 'batuhan';
+    this.user.name = "batuhan";
   }
 }
 

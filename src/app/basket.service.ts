@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MessageService } from "primeng/api";
+import { BehaviorSubject } from "rxjs";
 import { KadirProductService } from "./kadir-product.service";
 import { BasketModel } from "./product.model";
 
@@ -7,6 +8,9 @@ import { BasketModel } from "./product.model";
   providedIn: "root",
 })
 export class BasketService {
+  private total$ = new BehaviorSubject<number>(0);
+  totalPrice$ = this.total$.asObservable();
+
   constructor(
     private prodService: KadirProductService,
     private messageService: MessageService
@@ -44,5 +48,15 @@ export class BasketService {
         detail: "Muazzam",
       });
     }
+  }
+
+  calculateTotal() {
+    this.prodService.basketNew$.subscribe((res) => {
+      var total = 0;
+      res.forEach((element) => {
+        total += element.Price * element.Count;
+      });
+      this.total$.next(total);
+    });
   }
 }

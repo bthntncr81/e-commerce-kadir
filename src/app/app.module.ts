@@ -20,6 +20,7 @@ import { MessageService } from "primeng/api";
 import {DialogModule} from 'primeng/dialog';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     KadirProductComponent,
     BasketSidebarComponent,
     ProductDetailComponent,
+    LayoutComponent,
   ],
   imports: [
     ToastModule,
