@@ -21,6 +21,7 @@ import {DialogModule} from 'primeng/dialog';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { LayoutComponent } from './layout/layout.component';
+import { AuthService } from "./auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { LayoutComponent } from './layout/layout.component';
     BrowserAnimationsModule,
     DialogModule
   ],
-  providers: [KadirProductService,MessageService],
+  providers: [KadirProductService,MessageService,AuthService],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, FooterComponent],
 })

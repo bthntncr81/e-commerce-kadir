@@ -9,22 +9,64 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHrWKn4ufjcYFO9je547wRFxpSPmJTwqZ7nw&s"
                         alt="">
 
-                    <form>
+                    <form #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
 
                         <span class="p-input-icon-left">
                             <i class="pi pi-at"></i>
-                            <input type="text" pInputText placeholder="E-Posta">
-                        </span>
+                            <input type="text" name="mail" [(ngModel)]="loginModel.mail" #mail="ngModel" required email
+                                pInputText placeholder="E-Posta" /> </span>
 
 
                         <span class="p-input-icon-left">
                             <i class="pi pi-lock"></i>
-                            <input type="password" pInputText placeholder="Şifre">
-                        </span>
+                            <input type="password" name="password" (click)="op.toggle($event)"
+                                [(ngModel)]="loginModel.password" (ngModelChange)="op.show($event);passwordChange()"
+                                #password="ngModel" required minlength="8" maxlength="16" pInputText
+                                placeholder="Şifre" /> </span>
 
-                        <button pButton label="Giris Yap" class="w-100" icon="pi pi-sign-in"></button>
+
+
+                        <p-overlayPanel #op [style]="{'width':'250px'}">
+                            <div class="row gy-4">
+                                <div class="d-flex gap-2 align-items-center">
+                                    <i *ngIf="!isUpper" class="pi pi-plus"
+                                        style="transform:rotate( 135deg);color: red"></i>
+                                    <i *ngIf="isUpper" class="pi pi-check"></i>
+                                    Büyük Harf Bulunmalı
+                                </div>
+
+                                <div class="d-flex gap-2 align-items-center">
+                                    <i *ngIf="!isLower" class="pi pi-plus"
+                                        style="transform:rotate( 135deg);color: red"></i>
+                                    <i *ngIf="isLower" class="pi pi-check"></i>
+
+                                    Küçük Harf Bulunmalı
+                                </div>
+
+                                <div class="d-flex gap-2 align-items-center">
+                                    <i *ngIf="!isNumber" class="pi pi-plus"
+                                        style="transform:rotate( 135deg);color: red"></i>
+                                    <i *ngIf="isNumber" class="pi pi-check"></i>
+
+                                    Sayı Bulunmalı
+                                </div>
+
+                                <div class="d-flex gap-2 align-items-center">
+                                    <i *ngIf="!isSpaceless" class="pi pi-plus"
+                                        style="transform:rotate( 135deg);color: red;"></i>
+                                    <i *ngIf="isSpaceless" class="pi pi-check"></i>
+
+                                    Boşluk Olmamalı
+                                </div>
+
+                            </div>
+                        </p-overlayPanel>
+
+
+
+                        <button pButton label="Giris Yap" class="w-100"
+                            [disabled]="!(isLower||isNumber||isUpper||isSpaceless)" icon="pi pi-sign-in"></button>
                     </form>
-
                 </div>
 
 
@@ -34,3 +76,39 @@
 
     </div>
 </div>
+
+<p-toast></p-toast>
+
+
+
+<p-overlayPanel #op [style]="{'width':'250px'}">
+    <div class="row gy-4">
+        <div class="d-flex gap-2 align-items-center">
+            <i *ngIf="!isUpper" class="pi pi-plus" style="transform:rotate( 135deg);color: red"></i>
+            <i *ngIf="isUpper" class="pi pi-check"></i>
+            Büyük Harf Bulunmalı
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+            <i *ngIf="!isLower" class="pi pi-plus" style="transform:rotate( 135deg);color: red"></i>
+            <i *ngIf="isLower" class="pi pi-check"></i>
+
+            Küçük Harf Bulunmalı
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+            <i *ngIf="!isNumber" class="pi pi-plus" style="transform:rotate( 135deg);color: red"></i>
+            <i *ngIf="isNumber" class="pi pi-check"></i>
+
+            Sayı Bulunmalı
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+            <i *ngIf="!isSpaceless" class="pi pi-plus" style="transform:rotate( 135deg);color: red;"></i>
+            <i *ngIf="isSpaceless" class="pi pi-check"></i>
+
+            Boşluk Olmamalı
+        </div>
+
+    </div>
+</p-overlayPanel>
