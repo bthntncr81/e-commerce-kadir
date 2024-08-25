@@ -15,8 +15,12 @@
                             <i class="pi pi-at"></i>
                             <input type="text" name="mail" [(ngModel)]="loginModel.mail" #mail="ngModel" required email
                                 pInputText placeholder="E-Posta" /> </span>
+                        <div *ngIf="mail.invalid && mail.touched">
 
-
+                            <small *ngIf="mail.errors!['required']" class="error-message">E-posta gerekli.</small>
+                            <small *ngIf="mail.errors!['email']" class="error-message">Geçerli bir e-posta
+                                girin.</small>
+                        </div>
                         <span class="p-input-icon-left">
                             <i class="pi pi-lock"></i>
                             <input type="password" name="password" (click)="op.toggle($event)"
