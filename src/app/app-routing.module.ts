@@ -17,6 +17,11 @@ const routes: Routes = [
         path: "details/:id",
         component: ProductDetailComponent,
       },
+      {
+        path: "pay",
+        loadChildren: () =>
+          import("./checkout/checkout.module").then((m) => m.CheckoutModule),
+      },
     ],
   },
 

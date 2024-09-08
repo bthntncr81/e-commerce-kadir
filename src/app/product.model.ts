@@ -13,6 +13,8 @@ export class ProductModel {
 }
 
 export class BasketModel {
+  Category1: string;
+  Category2: string;
   Price: number;
   Count: number;
   Name: string;

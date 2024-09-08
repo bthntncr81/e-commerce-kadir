@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { AuthResponseModel, LoginModel } from "./auth.models";
+import { AuthResponseModel, LoginModel, RegisterModel } from "./auth.models";
 
 @Injectable({
   providedIn: "root",
@@ -11,7 +11,16 @@ export class AuthService {
 
   login(model: LoginModel): Observable<ServiceResultModel<AuthResponseModel>> {
     return this.httpClient.post<ServiceResultModel<AuthResponseModel>>(
-      "https://localhost:5213/api/Authorization/Login",
+      "http://localhost:5213/api/Authorization/Login",
+      model
+    );
+  }
+
+  register(
+    model: RegisterModel
+  ): Observable<ServiceResultModel<AuthResponseModel>> {
+    return this.httpClient.post<ServiceResultModel<AuthResponseModel>>(
+      "http://localhost:5213/api/Authorization/Register",
       model
     );
   }

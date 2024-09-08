@@ -43,6 +43,8 @@ export class ProductDetailComponent implements OnInit {
       )!;
 
       this.basketProduct = {
+        Category1: this.product.Category1,
+        Category2: this.product.Category2,
         Name: this.product.Name,
         Price: this.product.Price,
         Count: 1,
