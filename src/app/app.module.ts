@@ -3,52 +3,33 @@ import { BrowserModule } from "@angular/platform-browser";
 
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CarouselModule } from "ngx-owl-carousel-o";
+import { MessageService } from "primeng/api";
 import { ButtonModule } from "primeng/button";
+import { DialogModule } from "primeng/dialog";
 import { SidebarModule } from "primeng/sidebar";
+import { StepperModule } from "primeng/stepper";
 import { ToastModule } from "primeng/toast";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { BasketSidebarComponent } from "./basket-sidebar/basket-sidebar.component";
-import { FooterComponent } from "./footer/footer.component";
-import { HeaderComponent } from "./header/header.component";
 import { KadirProductService } from "./kadir-product.service";
-import { KadirProductComponent } from "./kadir-product/kadir-product.component";
-import { MainComponent } from "./main/main.component";
-import { MyFirstComponent } from "./my-first/my-first.component";
-import { ProductComponent } from "./product/product.component";
-import { MessageService } from "primeng/api";
-import {DialogModule} from 'primeng/dialog';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { LayoutComponent } from './layout/layout.component';
-import { AuthService } from "./auth/auth.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MyFirstComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainComponent,
-    ProductComponent,
-    KadirProductComponent,
-    BasketSidebarComponent,
-    ProductDetailComponent,
-    LayoutComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     ToastModule,
     CarouselModule,
+    StepperModule,
     BrowserModule,
     SidebarModule,
     ButtonModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    DialogModule
+    DialogModule,
   ],
-  providers: [KadirProductService,MessageService,AuthService],
+  providers: [KadirProductService, MessageService],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [],
 })
 export class AppModule {}

@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@microsoft/signalr": "^8.0.7",
     "bootstrap": "^5.3.3",
     "google-libphonenumber": "^3.2.38",
     "intl-tel-input": "^17.0.3",

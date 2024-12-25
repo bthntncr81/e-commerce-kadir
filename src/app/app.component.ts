@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { BasketService } from "./basket.service";
 import { KadirProductService } from "./kadir-product.service";
 
 @Component({
@@ -9,13 +8,8 @@ import { KadirProductService } from "./kadir-product.service";
 })
 export class AppComponent implements OnInit {
   constructor(
-    private basketService: BasketService,
-    private prodService: KadirProductService
   ) {}
-  ngOnInit(): void {
-    this.basketService.calculateTotal();
-    this.prodService.setCartList();
-  }
+  ngOnInit(): void {}
   title = "e-commerce-project";
   user: User = {
     surname: "Baş",

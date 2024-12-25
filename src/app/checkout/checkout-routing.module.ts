@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { PayComponent } from "./pay/pay.component";
+import { PayComponent } from "./pay2/pay.component";
 
 @NgModule({
   imports: [
